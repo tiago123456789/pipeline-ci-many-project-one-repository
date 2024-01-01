@@ -22,6 +22,6 @@ jobs:
       - uses: actions/setup-node@v2
 
       - name: Execute unit tests the project ${{ inputs.selectedProject }}
-      - run: |
+        run: |
           cd ${{ inputs.selectedProject }}
           npm run test
