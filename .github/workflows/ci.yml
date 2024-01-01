@@ -26,3 +26,5 @@ jobs:
           cd ${{ inputs.selectedProject }}
           npm i
           npm run test
+
+  
