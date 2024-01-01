@@ -1,0 +1,59 @@
+name: "Pipeline ci"
+
+on:
+  workflow_dispatch:
+    inputs:
+      selectedProject:
+        description: "Select the project"
+        required: true
+        type: choice
+        default: 'api1'
+        options:
+        - api1
+        - api2
+        - api3
+
+jobs:
+
+  api1_ci:
+    if: ${{ inputs.selectedProject }} == 'api1'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Execute unit tests the project api1
+        run: |
+          cd api1
+          npm i
+          npm run test
+    
+  api2_ci:
+    if: ${{ inputs.selectedProject }} == 'api2'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Execute unit tests the project api2
+        run: |
+          cd api2
+          npm i
+          npm run test
+
+  api3_ci:
+    if: ${{ inputs.selectedProject }} == 'api3'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+
+      - name: Execute unit tests the project api3
+        run: |
+          cd api3
+          npm i
+          npm run test
+
+
+
+  
