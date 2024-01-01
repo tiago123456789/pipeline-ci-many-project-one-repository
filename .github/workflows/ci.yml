@@ -24,4 +24,5 @@ jobs:
       - name: Execute unit tests the project ${{ inputs.selectedProject }}
         run: |
           cd ${{ inputs.selectedProject }}
+          npm i
           npm run test
