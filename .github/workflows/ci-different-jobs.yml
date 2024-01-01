@@ -1,4 +1,4 @@
-name: "Pipeline ci"
+name: "Pipeline ci each job each project"
 
 on:
   workflow_dispatch:
