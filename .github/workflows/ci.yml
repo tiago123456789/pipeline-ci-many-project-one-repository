@@ -20,6 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+
+      - name: Execute unit tests the project ${{ inputs.selectedProject }}
       - run: |
           cd ${{ inputs.selectedProject }}
-          node ./index.js
+          npm run test
