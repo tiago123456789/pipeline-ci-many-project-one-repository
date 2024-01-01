@@ -1,0 +1,25 @@
+name: "Pipeline ci"
+
+on:
+  workflow_dispatch:
+    inputs:
+      selectedProject:
+        description: "Select the project"
+        required: true
+        type: choice
+        default: 'api1'
+        options:
+        - api1
+        - api2
+        - api3
+
+jobs:
+
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: |
+          cd ${{ inputs.selectedProject }}
+          node ./index.js
