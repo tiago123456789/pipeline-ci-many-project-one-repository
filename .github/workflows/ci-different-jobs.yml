@@ -16,7 +16,7 @@ on:
 jobs:
 
   api1_ci:
-    if: ${{ inputs.selectedProject }} == 'api1'
+    if: inputs.selectedProject == 'api1'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
           npm run test
     
   api2_ci:
-    if: ${{ inputs.selectedProject }} == 'api2'
+    if: inputs.selectedProject == 'api2'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
           npm run test
 
   api3_ci:
-    if: ${{ inputs.selectedProject }} == 'api3'
+    if: inputs.selectedProject == 'api3'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
